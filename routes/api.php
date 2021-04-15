@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\blogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 | Please make BLOG & COMMENT CRUD ROUTES
 */
-
+Route::get('/getBlogs',[blogController::class, 'getBlogs']);
+Route::get('/getBlog/{id}',[blogController::class, 'getBlog']);
+Route::post('/postComment',[blogController::class, 'postComment']);
+Route::put('/updateComment',[blogController::class, 'putComment']);
+Route::delete('/deleteComment',[blogController::class, 'deleteComment']);
